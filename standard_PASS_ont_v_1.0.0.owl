@@ -1130,7 +1130,7 @@ The time unit for this timer transition is measured in business days. The defini
     <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#CalendarBasedReminderTransition">
         <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#ReminderTransition"/>
         <owl:disjointWith rdf:resource="http://www.i2pm.net/standard-pass-ont#TimeBasedReminderTransition"/>
-        <rdfs:comment xml:lang="en">A reminder transition, for defining exit conditions measured in calendar years or months
+        <rdfs:comment xml:lang="en">A reminder transition, for defining exit conditions for states measured in calendar years or months
 		
 		Conditions are e.g.: reaching of (in model) preset calendar date (e.g. 1st of July) or the reoccurrence  of a a long running frequency (&quot;every Month&quot;, &quot;2 times a year&quot;)</rdfs:comment>
     </owl:Class>
@@ -2743,7 +2743,7 @@ A subject in a model may be linked to more than one behavior.</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A condition that is deemed &apos;true&apos; and thus the according edge is gone, if: a surrounding execution system has deemed the time since entering the state and starting with the execution of the according action as too long (predefined by the outgoing edge)</rdfs:comment>
-        <rdfs:comment xml:lang="en">A condition that is true if a certain time defined has passed since the state this condition belongs to has been entered. (This is the standard TimeOut Exit condition)</rdfs:comment>
+        <rdfs:comment xml:lang="en">A condition that is true if a certain time defined has passed since the state this condition is attached to via its transition has been entered. (This is the standard TimeOut condition)</rdfs:comment>
     </owl:Class>
     
 
@@ -2795,7 +2795,7 @@ A subject in a model may be linked to more than one behavior.</rdfs:comment>
                 <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#Action"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An edge defines the transition between two states. A transition can be traversed if the outcome of the action of the state it originates from satisfies a certain exit condition specified by it&apos;s &quot;Alternative&quot;</rdfs:comment>
+        <rdfs:comment xml:lang="en">An edge defines the transition between two states. A transition can be traversed if the outcome of the action of the state it originates from satisfies a certain condition specified by it&apos;s &quot;Alternative&quot;. In the model these conditions are defined for and anttached to the transition --> Transition Condition (when a transition originates from a state, its transition condition defines one of possibly multipe exit conditions for that state. </rdfs:comment>
     </owl:Class>
     
 
@@ -2811,13 +2811,13 @@ A subject in a model may be linked to more than one behavior.</rdfs:comment>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An exit condition belongs to alternatives which in turn is given for a state. An alternative (to leave the state) is only a real alternative if the exit condition is fulfilled (technically: if that according function returns &quot;true&quot;)
+        <rdfs:comment xml:lang="en">An Transition condition defines an alternatives for a state that the transition the condition is attached to, originates from. An alternative (to leave the state) is only a real alternative if the condition is fulfilled (technically: if that according function returns &quot;true&quot;)
 
-Note: Technically and during execution exit conditions belong to states. They define when it is allowed to leave that state. However, in PASS models exit conditions for states are defined and connected to the according transition edges. Therefore transition conditions are individual entities and not DataProperties.
+Note: Technically and during execution "conditions" belong to states. They define when it is allowed to leave that state. However, in PASS models exit conditions for states are defined and connected to the according transition edges. Therefore transition conditions are individual entities and not DataProperties.
 
 The according matching must be done by the model execution environment.
 
-By its existence, an edge/transition defines one possible follow up &quot;state&quot; for its state of origin. It is coupled with an &quot;Exit Condition&quot; that must be fulfilled in the originating state in order to leave the state.</rdfs:comment>
+By its existence, an edge/transition defines one possible follow up &quot;state&quot; for its state of origin. It is coupled with an &quot;Exit Condition&quot; for that state (the transition condition) that must be fulfilled in the originating state in order to leave the state.</rdfs:comment>
     </owl:Class>
     
 
