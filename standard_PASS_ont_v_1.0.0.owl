@@ -2321,7 +2321,7 @@ The condition  may be defined as frequency over a given interval. --&gt; e.g. 12
     <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#ReminderTransition">
         <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#TimeTransition"/>
         <owl:disjointWith rdf:resource="http://www.i2pm.net/standard-pass-ont#TimerTransition"/>
-        <rdfs:comment xml:lang="en">Reminder transitions are transitions that can be traverses if a certain time based event or frequency has been reached. E.g. a number of months since the last traversal of this transition or the event of a certain preset calendar date etc.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Reminder transitions are transitions that can be traversed if a certain time based event or frequency has been reached. E.g. a number of months since the last traversal of this transition or the event of a certain preset calendar date etc.</rdfs:comment>
     </owl:Class>
     
 
