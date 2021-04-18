@@ -11,7 +11,22 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.i2pm.net/standard-pass-ont">
         <owl:versionIRI rdf:resource="http://www.i2pm.net/standard-pass-ont/1.0.0"/>
-        <owl:priorVersion xml:lang="en">2018-11-09: Elstermann (Proposal)
+        <rdfs:comment xml:lang="en">Version history:
+
+2018-11-22: Standardization Meeting Ingolstadt
+
+Agreed on Version 1.0.0 from meeting:
+
+Participants
+- Werner Schmidt
+- Herbert Kindermann
+- Bernhard Foltin
+- André Wolski
+- Florian Krenn
+- Albert Fleischmann
+- Matthes Elstermann
+
+2018-11-09: Elstermann (Proposal)
 
 clarifications for Send and Receive Transition Conditions and Sending and Receiving in regards to subjects with multiple instances (Multi-Subjects)
 
@@ -53,19 +68,7 @@ SendTransitionCondition
  - Werner Schmidt
  - Florian Krenn
  - Florian J. Strecker
- - Matthes Elstermann</owl:priorVersion>
-        <owl:versionInfo xml:lang="en">2018-11-22: Standardization Meeting Ingolstadt
-
-Agreed on Version 1.0.0 from meeting:
-
-Participants
-- Werner Schmidt
-- Herbert Kindermann
-- Bernhard Foltin
-- André Wolski
-- Florian Krenn
-- Albert Fleischmann
-- Matthes Elstermann</owl:versionInfo>
+ - Matthes Elstermann</rdfs:comment>
     </owl:Ontology>
     
 
