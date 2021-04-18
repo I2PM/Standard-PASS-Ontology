@@ -2799,7 +2799,7 @@ A subject in a model may be linked to more than one behavior.</rdfs:comment>
                 <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#Action"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An edge defines the transition between two states. A transition can be traversed if the outcome of the action of the state it originates from satisfies a certain condition specified by it&apos;s &quot;Alternative&quot;. In the model these conditions are defined for and anttached to the transition --&gt; Transition Condition (when a transition originates from a state, its transition condition defines one of possibly multipe exit conditions for that state. </rdfs:comment>
+        <rdfs:comment xml:lang="en">An edge defines the transition between two states. A transition can be traversed if the outcome of the action of the state it originates from satisfies a certain condition specified by it&apos;s &quot;Alternative&quot;. In the model these conditions are defined for and attached to the transition --&gt; Transition Condition (when a transition originates from a state, its transition condition defines one of possibly multipe exit conditions for that state. </rdfs:comment>
     </owl:Class>
     
 
