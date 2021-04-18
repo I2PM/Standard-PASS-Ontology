@@ -1276,7 +1276,6 @@ There is a rudimentary concept for a simple build-in data type definition closel
     <!-- http://www.i2pm.net/standard-pass-ont#DataMappingFunction -->
 
     <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#DataMappingFunction">
-        <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#BehaviorDescribingComponent"/>
         <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#DataDescribingComponent"/>
         <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#SimplePASSElement"/>
         <rdfs:subClassOf>
