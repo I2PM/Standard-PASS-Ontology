@@ -10,7 +10,8 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.i2pm.net/standard-pass-ont">
-        <owl:versionIRI rdf:resource="http://www.i2pm.net/standard-pass-ont/1.0.0"/>
+        <owl:versionIRI rdf:resource="http://www.i2pm.net/standard-pass-ont/dev"/>
+        <owl:priorVersion>http://www.i2pm.net/standard-pass-ont/1.0.0</owl:priorVersion>
         <rdfs:comment xml:lang="en">Version history:
 
 2018-11-22: Standardization Meeting Ingolstadt
