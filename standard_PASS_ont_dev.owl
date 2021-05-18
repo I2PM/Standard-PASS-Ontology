@@ -2219,6 +2219,13 @@ DefaultFunctionReceive2_AutoReceiveEarliest: automatically execute the according
                 <owl:allValuesFrom rdf:resource="http://www.i2pm.net/standard-pass-ont#ReceiveFunction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasOutgoingTransition"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#Transition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.i2pm.net/standard-pass-ont#SendState"/>
         <rdfs:comment xml:lang="en">The standard state in a PASS subject behavior diagram denoting an receive action or rather the waiting for a receive possibility.</rdfs:comment>
     </owl:Class>
@@ -2366,13 +2373,21 @@ The condition  may be defined as frequency over a given interval. --&gt; e.g. 12
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasOutgoingTransition"/>
-                <owl:someValuesFrom rdf:resource="http://www.i2pm.net/standard-pass-ont#SendingFailedTransition"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#SendingFailedTransition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasFunctionSpecification"/>
                 <owl:allValuesFrom rdf:resource="http://www.i2pm.net/standard-pass-ont#SendFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasOutgoingTransition"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#Transition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2570,13 +2585,15 @@ Usually there should be only one Start subject in a process context.</rdfs:comme
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasIncomingTransition"/>
-                <owl:someValuesFrom rdf:resource="http://www.i2pm.net/standard-pass-ont#Transition"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#Transition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasOutgoingTransition"/>
-                <owl:someValuesFrom rdf:resource="http://www.i2pm.net/standard-pass-ont#Transition"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#Transition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
