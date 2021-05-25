@@ -1,12 +1,12 @@
-= OWL Standard document for PASS
+# OWL Standard document for PASS
 
-The Web Ontology Lanague (OWL) is used to specify the structure of the subject-oriented modeling language PASS (Parallel Activity Specification Schema).
+The Web Ontology Lanague (OWL) is used to define the official exchange standard for the subject-oriented modeling language PASS (Parallel Activity Specification Schema).
 
 This repository contains the latest (development) version of the "Standard PASS Ont". See [/releases] for all releases.
 
 You can find the documentation of this ontology in a separate repository: https://github.com/I2PM/PASS-Standard-Book-Tex-Project
 
-== Development / releases
+## Development / releases
 
 The version history / changelog is contained within the file itself as comment of the ontology.
 

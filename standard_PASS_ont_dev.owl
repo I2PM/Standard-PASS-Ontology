@@ -11,10 +11,28 @@
      xmlns:standard-pass-ont="http://www.i2pm.net/standard-pass-ont#">
     <owl:Ontology rdf:about="http://www.i2pm.net/standard-pass-ont">
         <owl:versionIRI rdf:resource="http://www.i2pm.net/standard-pass-ont/dev"/>
-        <owl:priorVersion>http://www.i2pm.net/standard-pass-ont/1.0.0</owl:priorVersion>
         <rdfs:comment xml:lang="en">Version history:
 
-2018-11-22: Standardization Meeting Ingolstadt
+2021-05-19 Version 1.1.0: I2PM Standardization Meeting Sping 2021
+
+Participants:
+Matthes Elstermann – Karlsruhe Institute of Technology (KIT) matthes.elstermann@kit.edu
+Herbert Kindermann – Kindermann Consulting
+Robert Singer – FH Joanneum Graz
+Florian Krenn – Compunity, Linz, Austria
+Werner Schmidt – TH Ingolstadt
+Matthias Lederer – OTH Weiden
+Christian Stary – Universität Linz
+André Wolski – TU Darmstadt
+Albert Fleischmann – Interaktiv Unternehmensberatung
+
+Agreed on changes:
+- new Class SubjectExecutionMapping
+- performance improvements
+- clarification regarding EndState usage in SubjectBehavior
+
+
+2018-11-22 Version 1.0.0: Standardization Meeting Ingolstadt
 
 Agreed on Version 1.0.0 from meeting:
 
@@ -70,6 +88,7 @@ SendTransitionCondition
  - Florian Krenn
  - Florian J. Strecker
  - Matthes Elstermann</rdfs:comment>
+        <owl:priorVersion>http://www.i2pm.net/standard-pass-ont/1.0.0</owl:priorVersion>
     </owl:Ontology>
     
 
