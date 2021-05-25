@@ -519,6 +519,16 @@ However, in Process with where subjects can be instantiated multiple times (Mult
     
 
 
+    <!-- http://www.i2pm.net/standard-pass-ont#hasSubjectExecutionMapping -->
+
+    <owl:ObjectProperty rdf:about="http://www.i2pm.net/standard-pass-ont#hasSubjectExecutionMapping">
+        <rdfs:subPropertyOf rdf:resource="http://www.i2pm.net/standard-pass-ont#hasRelationToModelComponent"/>
+        <rdfs:domain rdf:resource="http://www.i2pm.net/standard-pass-ont#Subject"/>
+        <rdfs:range rdf:resource="http://www.i2pm.net/standard-pass-ont#SubjectExecutionMapping"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.i2pm.net/standard-pass-ont#hasTargetState -->
 
     <owl:ObjectProperty rdf:about="http://www.i2pm.net/standard-pass-ont#hasTargetState">
@@ -785,6 +795,16 @@ The same information is part of the &quot;requiresPerformedMessageExchange&quot;
     <owl:DatatypeProperty rdf:about="http://www.i2pm.net/standard-pass-ont#hasDurationTimeOutTime">
         <rdfs:subPropertyOf rdf:resource="http://www.i2pm.net/standard-pass-ont#hasTimeValue"/>
         <rdfs:domain rdf:resource="http://www.i2pm.net/standard-pass-ont#TimerTransitionCondition"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.i2pm.net/standard-pass-ont#hasExecutionMappingDefinition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.i2pm.net/standard-pass-ont#hasExecutionMappingDefinition">
+        <rdfs:subPropertyOf rdf:resource="http://www.i2pm.net/standard-pass-ont#PASSModelDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.i2pm.net/standard-pass-ont#SubjectExecutionMapping"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -1514,6 +1534,22 @@ b) write: in order to write incoming Data from e.g. a web Service or user input,
         <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#TransitionCondition"/>
         <rdfs:comment xml:lang="en">A TransitionCondition for the according DoTransitions and DoStates. 
 		</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.i2pm.net/standard-pass-ont#DynamicSubjectExecutionMapping -->
+
+    <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#DynamicSubjectExecutionMapping">
+        <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#SubjectExecutionMapping"/>
+        <owl:disjointWith rdf:resource="http://www.i2pm.net/standard-pass-ont#StaticSubjectExecutionMapping"/>
+        <rdfs:comment xml:lang="en">In an organisation with multiple hierarchical tiers, an agent &quot;Marry&quot; could be the supervisor for &quot;Paul&quot; and be able to authorize his vacations, while having to request her vacations in principle form &quot;Mark&quot;, who is her supervisor.
+
+Ideally, whenever some agent/subject-carrier initiates the vacation request process as an employee, the Subject &quot;Supervising Manager&quot; should automatically be mapped to her or his specific current supervisor.
+
+Furthermore, if that specific agent is not available but there are rules to determine a deputy or substitute, the subject should automatically be be mapped to that substitute. E.g. if &quot;Paul&quot; wants his vacation to be authorized, but &quot;Marry&quot; is currently on vacation herself, someone else should be there to fill in the role of &quot;Supervising Manager&quot;, namely &quot;Mark&quot; as her supervisor.
+
+Such logic / rules can be stored in a DynamicSubjectExecutionMapping object.</rdfs:comment>
     </owl:Class>
     
 
@@ -2658,6 +2694,15 @@ Usually there should be only one Start subject in a process context.</rdfs:comme
     
 
 
+    <!-- http://www.i2pm.net/standard-pass-ont#StaticSubjectExecutionMapping -->
+
+    <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#StaticSubjectExecutionMapping">
+        <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#SubjectExecutionMapping"/>
+        <rdfs:comment xml:lang="en">A mapping between subjects and agents can be done simple and direct (or &quot;static&quot;). Here, agents are directly mapped to subjects and therefore eligible to execute them. The only information necessary to know about the execution system is the existence of the agents in order to assign subjects to them.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.i2pm.net/standard-pass-ont#Subject -->
 
     <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#Subject">
@@ -2673,6 +2718,13 @@ Usually there should be only one Start subject in a process context.</rdfs:comme
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasOutgoingMessageExchange"/>
                 <owl:someValuesFrom rdf:resource="http://www.i2pm.net/standard-pass-ont#MessageExchange"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasSubjectExecutionMapping"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#SubjectExecutionMapping"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2749,6 +2801,26 @@ A subject in a model may be linked to more than one behavior.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#SubjectDataDefinition">
         <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#DataObjectDefinition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.i2pm.net/standard-pass-ont#SubjectExecutionMapping -->
+
+    <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#SubjectExecutionMapping">
+        <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#InteractionDescribingComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasExecutionMappingDefinition"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">On an &quot;atomic&quot; level any socio-technical system consist of various &quot;types of agents&quot;, individual human beings, physical machines that are meant for single tasks (e.g. production machines for stamping), and IT components that are used to coordinated them.
+
+When implementing a subject-oriented process model, it is necessary to state which &quot;agent&quot; is responsible for the execution of which subject. This concept is called mapping; as verb &quot;to map&quot; subjects to agents, or as noun to create &quot;a mapping&quot; between subjects and agents.
+
+To be useful, these mappings must be written in a form that can be understood by the execution system in order to assign the correct agents to be subject-carriers for the correct subjects. The mapping is used to answer question like: &quot;Is an agents allowed to execute a subject?&quot;, &quot;What resources/agents are available to execute a subject?&quot;.</rdfs:comment>
     </owl:Class>
     
 
@@ -3150,6 +3222,7 @@ In contrast to DefaultFunctionReceive1, it is not an option to prolong the recep
             <rdf:Description rdf:about="http://www.i2pm.net/standard-pass-ont#MessageExchangeList"/>
             <rdf:Description rdf:about="http://www.i2pm.net/standard-pass-ont#MessageSpecification"/>
             <rdf:Description rdf:about="http://www.i2pm.net/standard-pass-ont#Subject"/>
+            <rdf:Description rdf:about="http://www.i2pm.net/standard-pass-ont#SubjectExecutionMapping"/>
         </owl:members>
     </rdf:Description>
     
