@@ -88,7 +88,7 @@ SendTransitionCondition
  - Florian Krenn
  - Florian J. Strecker
  - Matthes Elstermann</rdfs:comment>
-        <owl:priorVersion>http://www.i2pm.net/standard-pass-ont/1.0.0</owl:priorVersion>
+        <owl:priorVersion>http://www.i2pm.net/standard-pass-ont/1.1.0</owl:priorVersion>
     </owl:Ontology>
     
 
