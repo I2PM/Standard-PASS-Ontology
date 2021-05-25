@@ -1781,6 +1781,23 @@ InputPoolConstraintStrategy-Drop - Sending of the message succeeds. However the 
     <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#MacroBehavior">
         <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#SubjectBehavior"/>
         <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#contains"/>
+                        <owl:someValuesFrom rdf:resource="http://www.i2pm.net/standard-pass-ont#EndState"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#contains"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#GenericReturnToOriginReference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#contains"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -2332,6 +2349,16 @@ The condition  may be defined as frequency over a given interval. --&gt; e.g. 12
 
     <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#ReminderTransition">
         <rdfs:subClassOf rdf:resource="http://www.i2pm.net/standard-pass-ont#TimeTransition"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasSourceState"/>
+                        <owl:someValuesFrom rdf:resource="http://www.i2pm.net/standard-pass-ont#SendState"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.i2pm.net/standard-pass-ont#TimerTransition"/>
         <rdfs:comment xml:lang="en">Reminder transitions are transitions that can be traversed if a certain time based event or frequency has been reached. E.g. a number of months since the last traversal of this transition or the event of a certain preset calendar date etc.</rdfs:comment>
     </owl:Class>
@@ -2675,6 +2702,13 @@ Usually there should be only one Start subject in a process context.</rdfs:comme
                 </owl:complementOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasEndState"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#EndState"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The standard behavior model type</rdfs:comment>
     </owl:Class>
     
@@ -2688,13 +2722,6 @@ Usually there should be only one Start subject in a process context.</rdfs:comme
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#contains"/>
                 <owl:allValuesFrom rdf:resource="http://www.i2pm.net/standard-pass-ont#BehaviorDescribingComponent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasEndState"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#State"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
