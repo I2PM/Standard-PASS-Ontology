@@ -345,7 +345,7 @@ SendTransitionCondition
     <owl:ObjectProperty rdf:about="http://www.i2pm.net/standard-pass-ont#hasHandlingStrategy">
         <rdfs:subPropertyOf rdf:resource="http://www.i2pm.net/standard-pass-ont#hasRelationToModelComponent"/>
         <rdfs:domain rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolConstraint"/>
-        <rdfs:range rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolContstraintHandlingStrategy"/>
+        <rdfs:range rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintHandlingStrategy"/>
     </owl:ObjectProperty>
     
 
@@ -1714,7 +1714,7 @@ It starts with a (guard) receive state denoting a special interrupting message. 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.i2pm.net/standard-pass-ont#hasHandlingStrategy"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolContstraintHandlingStrategy"/>
+                <owl:onClass rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintHandlingStrategy"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1741,9 +1741,9 @@ Limiting the input pool for certain reasons to size 0 together with the InputPoo
     
 
 
-    <!-- http://www.i2pm.net/standard-pass-ont#InputPoolContstraintHandlingStrategy -->
+    <!-- http://www.i2pm.net/standard-pass-ont#InputPoolConstraintHandlingStrategy -->
 
-    <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#InputPoolContstraintHandlingStrategy">
+    <owl:Class rdf:about="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintHandlingStrategy">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
@@ -3073,7 +3073,7 @@ In contrast to DefaultFunctionReceive1, it is not an option to prolong the recep
     <!-- http://www.i2pm.net/standard-pass-ont#InputPoolConstraintStrategy-Blocking -->
 
     <owl:NamedIndividual rdf:about="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintStrategy-Blocking">
-        <rdf:type rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolContstraintHandlingStrategy"/>
+        <rdf:type rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintHandlingStrategy"/>
     </owl:NamedIndividual>
     
 
@@ -3081,7 +3081,7 @@ In contrast to DefaultFunctionReceive1, it is not an option to prolong the recep
     <!-- http://www.i2pm.net/standard-pass-ont#InputPoolConstraintStrategy-DeleteLatest -->
 
     <owl:NamedIndividual rdf:about="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintStrategy-DeleteLatest">
-        <rdf:type rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolContstraintHandlingStrategy"/>
+        <rdf:type rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintHandlingStrategy"/>
     </owl:NamedIndividual>
     
 
@@ -3089,7 +3089,7 @@ In contrast to DefaultFunctionReceive1, it is not an option to prolong the recep
     <!-- http://www.i2pm.net/standard-pass-ont#InputPoolConstraintStrategy-DeleteOldest -->
 
     <owl:NamedIndividual rdf:about="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintStrategy-DeleteOldest">
-        <rdf:type rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolContstraintHandlingStrategy"/>
+        <rdf:type rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintHandlingStrategy"/>
     </owl:NamedIndividual>
     
 
@@ -3097,7 +3097,7 @@ In contrast to DefaultFunctionReceive1, it is not an option to prolong the recep
     <!-- http://www.i2pm.net/standard-pass-ont#InputPoolConstraintStrategy-Drop -->
 
     <owl:NamedIndividual rdf:about="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintStrategy-Drop">
-        <rdf:type rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolContstraintHandlingStrategy"/>
+        <rdf:type rdf:resource="http://www.i2pm.net/standard-pass-ont#InputPoolConstraintHandlingStrategy"/>
     </owl:NamedIndividual>
     
 
