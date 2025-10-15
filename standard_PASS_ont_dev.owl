@@ -1386,13 +1386,6 @@ SendTransitionCondition
     <SubClassOf>
         <Class IRI="#PASSProcessModel"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasAdditionalAttribute"/>
-            <Class IRI="#AdditionalAttribute"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PASSProcessModel"/>
-        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasRelationToModelComponent"/>
             <Class IRI="#MessageExchange"/>
         </ObjectSomeValuesFrom>
